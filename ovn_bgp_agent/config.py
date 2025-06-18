@@ -142,6 +142,10 @@ agent_opts = [
                     'Finally, with ovn, instead of using kernel networking a '
                     'dedicated ovn cluster per node is used for the traffic '
                     'redirection'),
+    cfg.ListOpt('ignore_bridges',
+                default=None,
+                help='Allows to filter out bridges that the agent '
+                      'should not touch.'),
 ]
 
 root_helper_opts = [

@@ -324,7 +324,11 @@ class OvsIdl(object):
         if bridge:
             key = key + '-' + str(bridge)
         try:
-            return [i.strip() for i in
-                    self._get_from_ext_ids(key).split(',')]
+            mappings = [i.strip() for i in
+                        self._get_from_ext_ids(key).split(',')]
+            return [
+                mapping for mapping in mappings
+                if mapping.split(':', 1)[-1] not in CONF.ignore_bridges
+            ]
         except KeyError:
             return []
