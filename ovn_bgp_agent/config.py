@@ -143,7 +143,7 @@ agent_opts = [
                     'dedicated ovn cluster per node is used for the traffic '
                     'redirection'),
     cfg.ListOpt('ignore_bridges',
-                default=None,
+                default=[],
                 help='Allows to filter out bridges that the agent '
                       'should not touch.'),
 ]
